@@ -79,7 +79,7 @@ async def search_graphiti(ctx: RunContext[GraphitiDependencies], query: str) -> 
         # Perform the search
         #results = await graphiti.search(query)
         node_search_config = COMBINED_HYBRID_SEARCH_RRF.model_copy(deep=True)
-        node_search_config.limit = 10  # Limit to 5 results
+        node_search_config.limit = 1 # Limit to 5 results
 
         results = await graphiti._search(query, config=node_search_config,)
 
